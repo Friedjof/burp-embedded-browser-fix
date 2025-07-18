@@ -10,7 +10,23 @@ This problem is caused by incorrect permissions set on the `chrome-sandbox` bina
 
 ## Usage
 
-### One-liner
+### Quick Fix (Remote Execution)
+
+The fastest way to fix the issue is to run the script directly from the repository using one of these commands:
+
+**Using curl:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/intelligencegroup-io/burp-embedded-browser-fix/refs/heads/main/burp-embedded-browser-fix.sh | bash
+```
+
+**Using wget:**
+```bash
+wget -qO- https://raw.githubusercontent.com/intelligencegroup-io/burp-embedded-browser-fix/refs/heads/main/burp-embedded-browser-fix.sh | bash
+```
+
+### Local Installation
+
+#### One-liner
 
 You can quickly fix the issue by running the following one-liner, which will clone the repository, give execution permissions to the script, and run it in one go:
 
@@ -18,33 +34,40 @@ You can quickly fix the issue by running the following one-liner, which will clo
 git clone https://github.com/intelligencegroup-io/burp-embedded-browser-fix.git && cd burp-embedded-browser-fix && chmod +x burp-embedded-browser-fix.sh && ./burp-embedded-browser-fix.sh
 ```
 
-### Step 1: Clone the repository
+#### Step-by-step
 
-If you prefer to follow individual steps, first clone the repository to your local machine:
+If you prefer to follow individual steps:
 
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/intelligencegroup-io/burp-embedded-browser-fix.git
+   ```
+
+2. **Give execution permissions:**
+   ```bash
+   cd burp-embedded-browser-fix
+   chmod +x burp-embedded-browser-fix.sh
+   ```
+
+3. **Run the script:**
+   ```bash
+   ./burp-embedded-browser-fix.sh
+   ```
+
+### Advanced Usage
+
+The script now supports additional options:
+
+**Help:**
 ```bash
-git clone https://github.com/intelligencegroup-io/burp-embedded-browser-fix.git
+./burp-embedded-browser-fix.sh --help
 ```
 
-### Step 2: Give execution permissions
-
-Navigate into the cloned directory and make the script executable:
-
+**Custom chrome-sandbox path:**
 ```bash
-cd burp-embedded-browser-fix
-chmod +x burp-embedded-browser-fix.sh
+./burp-embedded-browser-fix.sh --path /custom/path/to/chrome-sandbox
 ```
 
-### Step 3: Run the script
+### Verification
 
-Execute the script with the following command:
-
-```bash
-./burp-embedded-browser-fix.sh
-```
-
-This will fix the permissions for Burp Suite's embedded browser to launch correctly.
-
-### Step 4: Open Browser
-
-After running the script, click on the "Open Browser" button. The default browser should now launch without any issues.
+After running the script, click on the "Open Browser" button in Burp Suite. The default browser should now launch without any issues.
