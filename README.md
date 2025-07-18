@@ -24,7 +24,31 @@ curl -fsSL https://raw.githubusercontent.com/intelligencegroup-io/burp-embedded-
 wget -qO- https://raw.githubusercontent.com/intelligencegroup-io/burp-embedded-browser-fix/refs/heads/main/burp-embedded-browser-fix.sh | bash
 ```
 
-### Local Installation
+### Permanent Installation
+
+For frequent use, you can install the script permanently as a system command with a single command:
+
+**One-line installation (with confirmation):**
+```bash
+curl -fsSL https://raw.githubusercontent.com/intelligencegroup-io/burp-embedded-browser-fix/refs/heads/main/install.sh | bash
+```
+
+**One-line installation (no prompts):**
+```bash
+curl -fsSL https://raw.githubusercontent.com/intelligencegroup-io/burp-embedded-browser-fix/refs/heads/main/install.sh | bash -s -- --yes
+```
+
+**Alternative with wget:**
+```bash
+wget -qO- https://raw.githubusercontent.com/intelligencegroup-io/burp-embedded-browser-fix/refs/heads/main/install.sh | bash
+```
+
+After installation, you can run the fix from anywhere using:
+```bash
+fix-burp
+```
+
+### Local Installation (One-time Use)
 
 #### One-liner
 
@@ -56,15 +80,19 @@ If you prefer to follow individual steps:
 
 ### Advanced Usage
 
-The script now supports additional options:
+The script supports additional options (works with both `./burp-embedded-browser-fix.sh` and `fix-burp` if installed):
 
 **Help:**
 ```bash
+fix-burp --help
+# or
 ./burp-embedded-browser-fix.sh --help
 ```
 
 **Custom chrome-sandbox path:**
 ```bash
+fix-burp --path /custom/path/to/chrome-sandbox
+# or  
 ./burp-embedded-browser-fix.sh --path /custom/path/to/chrome-sandbox
 ```
 
